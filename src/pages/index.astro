@@ -1,0 +1,114 @@
+---
+const pageTitle = 'Messaging Intel — Thoughtful follow-up, exact human approval';
+const description = 'Consent-aware follow-up review with matching and disqualifying evidence, exact-body approval, and immediate pre-send revalidation.';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href="https://messaging-intel.github.io/" />
+    <meta name="theme-color" content="#071313" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://messaging-intel.github.io/" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href="/" aria-label="Messaging Intel home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Messaging Intel</span></a>
+      <nav aria-label="Primary navigation"><a href="#review">Review</a><a href="#boundaries">Boundaries</a><a href="#research">Research</a><a class="github" href="https://github.com/messaging-intel">GitHub</a></nav>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="status"><span></span> Release-gated preview</div>
+          <h1>Follow up thoughtfully—<em>only after review.</em></h1>
+          <p class="lede">Messaging Intel finds conversations that match explicit, consent-aware rules, shows both matching and disqualifying evidence, and keeps every proposed message behind exact-body human approval and immediate pre-send revalidation.</p>
+          <div class="actions"><a class="button mint" href="#review">See the review path</a><a class="button outline" href="https://github.com/messaging-intel">Project organization</a></div>
+          <p class="closed"><b>Live send defaults closed.</b> Provider execution remains disabled until selector certification and release evidence pass.</p>
+        </div>
+
+        <div class="review-card" aria-label="Illustration of a follow-up candidate review">
+          <div class="review-head"><span>CANDIDATE REVIEW</span><b>1 of 4 confirmations</b></div>
+          <div class="person"><div class="avatar" aria-hidden="true">AR</div><div><b>Conversation 28</b><span>Identity must be confirmed</span></div><i>pending</i></div>
+          <div class="evidence positive"><span>MATCHING EVIDENCE</span><p>One outbound message found; no inbound reply in the reviewed window.</p><b>rule match</b></div>
+          <div class="evidence negative"><span>DISQUALIFYING CHECK</span><p>No suppression, quiet-hours, consent, or rate-limit conflict found in the current snapshot.</p><b>clear now</b></div>
+          <div class="draft"><span>EXACT PROPOSED BODY</span><p>“Hey—wanted to follow up on my note from last week…”</p><small>Encrypted at rest · digest-bound approval</small></div>
+          <div class="confirm-row"><span><i></i> evidence</span><span><i></i> non-match</span><span><i></i> identity</span><span><i></i> exact body</span></div>
+          <button disabled aria-label="Sending is disabled in preview">Send disabled in preview</button>
+        </div>
+      </section>
+
+      <section class="thesis">
+        <p>Automation should make a decision <em>legible</em> before it makes an action possible.</p>
+        <span>CONSENT · EVIDENCE · APPROVAL · REVALIDATION</span>
+      </section>
+
+      <section class="review section" id="review">
+        <div class="section-heading">
+          <p class="kicker">The review path</p>
+          <h2>Why this conversation surfaced is part of the product.</h2>
+          <p>A candidate includes the rule that matched, nearby evidence that did not match, and the conditions that would disqualify it. Reviewers see the whole decision boundary.</p>
+        </div>
+        <div class="review-steps">
+          <article><span>01</span><h3>Find a bounded candidate</h3><p>Eligibility is explicit—for the default rule, exactly one outbound and zero inbound messages.</p><b>Candidate</b></article>
+          <article><span>02</span><h3>Show both sides</h3><p>Matching and nearby non-matching evidence travel together so a reviewer can challenge the rule.</p><b>Evidence</b></article>
+          <article><span>03</span><h3>Confirm four facts</h3><p>Evidence match, non-match, identity, and exact proposed body each require an affirmative review.</p><b>Approval</b></article>
+          <article><span>04</span><h3>Check again at send time</h3><p>Consent, suppression, quiet hours, limits, identity, body digest, and thread drift are revalidated.</p><b>Revalidation</b></article>
+        </div>
+      </section>
+
+      <section class="binding section" id="boundaries">
+        <div class="binding-copy">
+          <p class="kicker">Approval is a binding</p>
+          <h2>The green light belongs to one candidate, one rule, one identity, and one exact message.</h2>
+          <p>Approved bodies are encrypted. Approval records bind the candidate fingerprint and body digest, and a single-use claim closes after execution. A changed thread or message invalidates the old decision instead of inheriting it.</p>
+        </div>
+        <div class="binding-diagram" aria-label="Fields bound by a single approval">
+          <div><span>candidate</span><b>cand_81e4</b></div>
+          <i>+</i><div><span>rule</span><b>followup_v3</b></div>
+          <i>+</i><div><span>identity</span><b>contact_29</b></div>
+          <i>+</i><div><span>body digest</span><b>sha256: 9c1…</b></div>
+          <strong>ONE APPROVAL</strong>
+        </div>
+      </section>
+
+      <section class="surfaces section">
+        <div class="section-heading compact">
+          <p class="kicker">One policy / four surfaces</p>
+          <h2>Review wherever work happens. Keep execution at the narrow edge.</h2>
+        </div>
+        <div class="surface-grid">
+          <article><span>WEB</span><h3>Research dashboard</h3><p>Maud, Axum, htmx, and evidence views.</p></article>
+          <article><span>MOBILE</span><h3>Flutter review</h3><p>Candidate inspection without a live-send control.</p></article>
+          <article><span>NATIVE</span><h3>Makepad desktop</h3><p>Native review surface using the same contracts.</p></article>
+          <article><span>EXTENSION</span><h3>Fail-closed executor</h3><p>The intended browser edge; selector packs are still release-gated.</p></article>
+        </div>
+      </section>
+
+      <section class="research section" id="research">
+        <div>
+          <p class="kicker">Separate research capability</p>
+          <h2>Longitudinal signals, with uncertainty attached.</h2>
+        </div>
+        <div>
+          <p>The analytics toolkit explores language, signal, change-point, and forecasting methods with provenance, uncertainty, abstention, and human review. It does not make diagnostic, causal, or fertility claims.</p>
+          <ul><li>Consent-aware capture</li><li>Encrypted offline persistence</li><li>Server-authoritative reconciliation</li><li>Provenance on every result</li></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer><a class="brand" href="/"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Messaging Intel</span></a><p>Make the evidence visible. Keep the person in control.</p><a href="https://github.com/messaging-intel">GitHub ↗</a></footer>
+  </body>
+</html>
+
+<style is:global>
+  :root{--evergreen:#071313;--panel:#0d201d;--panel2:#122a25;--mint:#69d5ba;--gold:#f1c66f;--plum:#c79bf0;--ink:#eff8f3;--muted:#a9c0b8;--line:#29413a;--red:#f28a82;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--evergreen);font-synthesis:none}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--evergreen);background-image:radial-gradient(circle at 80% 8%,rgba(109,86,184,.15),transparent 32%)}a{color:inherit}.skip-link{position:fixed;top:-4rem;left:1rem;z-index:99;background:var(--gold);color:var(--evergreen);padding:.8rem}.skip-link:focus{top:1rem}header,main,footer{width:min(1180px,calc(100% - 42px));margin-inline:auto}header{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;gap:.75rem;align-items:center;text-decoration:none;font-weight:850;letter-spacing:-.02em}.mark{width:32px;height:30px;position:relative;display:inline-block}.mark i{position:absolute;width:16px;height:16px;border:2px solid var(--mint);border-radius:50%}.mark i:nth-child(1){left:0;top:1px}.mark i:nth-child(2){right:0;top:1px}.mark i:nth-child(3){left:8px;bottom:0;border-color:var(--gold)}nav{display:flex;gap:1.5rem;align-items:center;font-size:.78rem;font-weight:800}nav a{text-decoration:none}.github{border:1px solid var(--line);padding:.7rem .9rem}.hero{min-height:700px;display:grid;grid-template-columns:1fr .9fr;gap:7vw;align-items:center;padding:75px 0 95px}.status,.kicker{font-size:.68rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.status{display:flex;align-items:center;gap:.6rem;color:var(--gold)}.status span{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(241,198,111,.12)}h1,h2,h3,p{margin-top:0}h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:500}h1{font-size:clamp(3.8rem,7vw,7rem);line-height:.92;letter-spacing:-.06em;margin:1.4rem 0 2rem}h1 em{font-weight:500;color:var(--mint)}h2{font-size:clamp(2.7rem,5vw,5rem);line-height:.98;letter-spacing:-.05em}.lede{font-size:1.14rem;line-height:1.7;color:var(--muted);max-width:650px}.actions{display:flex;gap:.7rem;flex-wrap:wrap;margin:2rem 0}.button{padding:.85rem 1rem;text-decoration:none;font-size:.8rem;font-weight:900;border:1px solid var(--line)}.button.mint{background:var(--mint);color:var(--evergreen);border-color:var(--mint)}.button.outline:hover{border-color:var(--mint)}.closed{font-size:.75rem;line-height:1.55;color:var(--muted);border-left:2px solid var(--gold);padding-left:12px;max-width:560px}.closed b{color:var(--gold)}.review-card{background:#f4f1e8;color:#16211d;border-radius:4px;padding:19px;box-shadow:14px 14px 0 #6d56b8}.review-head,.person,.evidence,.draft{border-bottom:1px solid #cecfc6}.review-head{display:flex;justify-content:space-between;padding:0 0 14px;font:800 .59rem ui-monospace,monospace;letter-spacing:.1em}.review-head b{color:#6d56b8}.person{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:11px;padding:16px 0}.avatar{width:38px;height:38px;border-radius:50%;background:#173c34;color:#b7f2df;display:grid;place-items:center;font:800 .65rem ui-monospace,monospace}.person div:nth-child(2){display:flex;flex-direction:column}.person b{font-size:.78rem}.person span{font-size:.65rem;color:#6d756f;margin-top:.2rem}.person>i{font:800 .57rem ui-monospace,monospace;color:#9a6d19}.evidence{padding:14px 12px;margin-top:10px;background:#e8eee8;border-left:3px solid #348c75}.evidence.negative{background:#f2eadb;border-left-color:#b47d28}.evidence span,.draft span{font:800 .55rem ui-monospace,monospace;letter-spacing:.09em}.evidence p{font-size:.7rem;line-height:1.45;margin:.45rem 0}.evidence b{font:800 .56rem ui-monospace,monospace;color:#26715e}.evidence.negative b{color:#8c5b13}.draft{padding:16px 0}.draft p{font-family:Georgia,serif;font-size:.9rem;line-height:1.45;margin:.6rem 0}.draft small{font-size:.58rem;color:#6c746d}.confirm-row{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:15px 0}.confirm-row span{font:700 .54rem ui-monospace,monospace;color:#656d67}.confirm-row i{display:inline-block;width:7px;height:7px;border:1px solid #87908a;margin-right:3px}.review-card button{width:100%;border:0;background:#b7bcb7;color:#636863;padding:.8rem;font-weight:900}.thesis{width:100%;border-block:1px solid var(--line);padding:35px 0;display:flex;align-items:baseline;justify-content:space-between;gap:2rem}.thesis p{font-family:Georgia,serif;font-size:1.45rem;margin:0}.thesis p em{color:var(--mint)}.thesis span{font:700 .6rem ui-monospace,monospace;color:var(--gold);letter-spacing:.12em}.section{padding:115px 0;border-bottom:1px solid var(--line)}.section-heading{display:grid;grid-template-columns:.33fr 1fr .67fr;gap:2.4rem;align-items:start;margin-bottom:55px}.kicker{color:var(--gold)}.section-heading h2{margin:0}.section-heading>p:last-child{color:var(--muted);line-height:1.7}.review-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.review-steps article{min-height:265px;background:var(--panel);border:1px solid var(--line);padding:23px;display:flex;flex-direction:column}.review-steps article>span{font:800 .62rem ui-monospace,monospace;color:var(--mint)}.review-steps h3{margin:3.5rem 0 .7rem;font-family:Georgia,serif;font-weight:500;font-size:1.15rem}.review-steps p{color:var(--muted);font-size:.82rem;line-height:1.6}.review-steps article>b{margin-top:auto;font:800 .58rem ui-monospace,monospace;color:var(--gold);text-transform:uppercase}.binding{display:grid;grid-template-columns:1fr .9fr;gap:7vw;align-items:center}.binding-copy>p:not(.kicker){color:var(--muted);line-height:1.7}.binding-diagram{display:grid;grid-template-columns:1fr;gap:7px;background:var(--panel);border:1px solid var(--line);padding:24px}.binding-diagram div{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:9px 0}.binding-diagram span{font:700 .61rem ui-monospace,monospace;color:var(--muted)}.binding-diagram b{font:700 .63rem ui-monospace,monospace;color:var(--mint)}.binding-diagram>i{text-align:center;color:var(--plum);font-style:normal}.binding-diagram>strong{text-align:center;background:var(--plum);color:#221b2a;padding:.75rem;font-size:.72rem}.section-heading.compact{grid-template-columns:.4fr 1.6fr}.surface-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.surface-grid article{padding:25px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.surface-grid span{font:800 .6rem ui-monospace,monospace;color:var(--mint)}.surface-grid h3{font-family:Georgia,serif;font-weight:500;margin:2.7rem 0 .6rem}.surface-grid p{font-size:.8rem;line-height:1.6;color:var(--muted)}.research{display:grid;grid-template-columns:1fr .8fr;gap:8vw;background:var(--panel2);padding-inline:40px}.research>div:last-child>p{color:var(--muted);line-height:1.75}.research ul{padding:0;list-style:none;border-top:1px solid var(--line)}.research li{padding:.75rem 0;border-bottom:1px solid var(--line);font-size:.78rem}.research li::before{content:"◇";color:var(--plum);margin-right:.7rem}footer{padding:50px 0 65px;display:grid;grid-template-columns:1fr 1fr auto;gap:2rem;align-items:center;color:var(--muted);font-size:.76rem}footer p{margin:0}footer>a:last-child{font-weight:900;color:var(--mint)}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px}@media(max-width:900px){.hero,.binding,.research{grid-template-columns:1fr}.review-card{max-width:620px}.section-heading{grid-template-columns:1fr}.review-steps,.surface-grid{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr}}@media(max-width:620px){header{height:auto;padding:18px 0;align-items:flex-start}nav a:not(.github){display:none}.hero{padding:55px 0}h1{font-size:3.45rem}.review-card{padding:13px;box-shadow:7px 7px 0 #6d56b8}.confirm-row{grid-template-columns:repeat(2,1fr)}.thesis{align-items:flex-start;flex-direction:column}.section{padding:78px 0}.section-heading,.section-heading.compact{grid-template-columns:1fr;gap:.8rem}.review-steps,.surface-grid{grid-template-columns:1fr}.research{padding-inline:20px}header,main,footer{width:min(100% - 26px,1180px)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>

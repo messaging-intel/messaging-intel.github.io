@@ -7,6 +7,9 @@ const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
 const ci = readFileSync('.github/workflows/ci.yml', 'utf8');
 const deploy = readFileSync('.github/workflows/deploy.yml', 'utf8');
 
+const join = readFileSync('src/pages/join.astro', 'utf8');
+const poll = readFileSync('src/pages/poll.astro', 'utf8');
+
 test('Astro source owns a complete, discoverable document', () => {
   assert.match(source, /<!doctype html>/i);
   assert.match(source, /<title>/);
@@ -23,6 +26,14 @@ test('landing page contains product-specific sections and boundary copy', () => 
   assert.match(source, /id="boundaries"/);
   assert.match(source, /id="research"/);
   assert.match(source, /Live send defaults closed/i);
+  assert.match(source, /href="\/join"/);
+  assert.match(join, /H0 \(null\)/);
+  assert.match(join, /not<\/em> statistically significant clustering/);
+  assert.match(source, /href="\/poll"/);
+  assert.match(poll, /operator-pasted Tinder or TikTok/);
+  assert.match(poll, /never log into those sites/);
+  assert.match(join, /Content-Security-Policy/);
+  assert.match(poll, /no-referrer/);
 });
 
 test('dependencies and builds are reproducible', () => {

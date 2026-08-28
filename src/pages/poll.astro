@@ -1,0 +1,44 @@
+---
+const pageTitle = 'Study check-in portal';
+const description = 'Voluntary Messaging Intel check-in for consented participants in Brasil, Colombia, Ecuador, and Venezuela. Open the app when convenient.';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href="https://messaging-intel.github.io/poll" />
+    <meta name="theme-color" content="#071313" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; connect-src 'none'; script-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href="/" aria-label="Messaging Intel home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Messaging Intel</span></a>
+      <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/join">Join the study</a><a href="/poll">Check-in</a><a class="github" href="https://github.com/messaging-intel">GitHub</a></nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="status"><span></span> Convenience ping</div>
+          <h1>Open the app when it is convenient.</h1>
+          <p class="lede">This is the destination of Instagram, Messenger, WhatsApp, email, QR, and operator-pasted Tinder or TikTok invites. Health values stay in the consented app. This is not a diagnosis.</p>
+          <p class="closed"><b>Official APIs</b> may send this URL for Instagram, Messenger, Facebook, and review-gated WhatsApp. X DMs wait on provider approval.</p>
+          <p class="closed"><b>Operator compose</b> is required for Tinder and TikTok. Browser tests never log into those sites.</p>
+          <div class="actions">
+            <a class="button mint" href="msgint://poll?channel=website">Open in the app</a>
+            <a class="button outline" href="https://messaging-intel.github.io/poll?country=CO&amp;channel=instagram">Colombia Instagram link</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer><a class="brand" href="/"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Messaging Intel</span></a><p>Make the evidence visible. Keep the person in control.</p><a href="https://github.com/messaging-intel">GitHub ↗</a></footer>
+  </body>
+</html>
+<style is:global>
+  :root{--evergreen:#071313;--mint:#69d5ba;--gold:#f1c66f;--ink:#eff8f3;--muted:#a9c0b8;--line:#29413a;font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:var(--evergreen)}*{box-sizing:border-box}body{margin:0;background:var(--evergreen)}a{color:inherit}.skip-link{position:fixed;top:-4rem;left:1rem;z-index:99;background:var(--gold);color:var(--evergreen);padding:.8rem}.skip-link:focus{top:1rem}header,main,footer{width:min(1180px,calc(100% - 42px));margin-inline:auto}header{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;gap:.75rem;align-items:center;text-decoration:none;font-weight:850}.mark{width:32px;height:30px;position:relative;display:inline-block}.mark i{position:absolute;width:16px;height:16px;border:2px solid var(--mint);border-radius:50%}.mark i:nth-child(1){left:0;top:1px}.mark i:nth-child(2){right:0;top:1px}.mark i:nth-child(3){left:8px;bottom:0;border-color:var(--gold)}nav{display:flex;gap:1.5rem;align-items:center;font-size:.78rem;font-weight:800}nav a{text-decoration:none}.github{border:1px solid var(--line);padding:.7rem .9rem}h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(2.6rem,6vw,4.8rem);letter-spacing:-.05em}.lede,.closed{color:var(--muted);line-height:1.7}.closed{border-left:2px solid var(--gold);padding-left:12px}.closed b{color:var(--gold)}.actions{display:flex;gap:.7rem;flex-wrap:wrap;margin:2rem 0}.button{padding:.85rem 1rem;text-decoration:none;font-size:.8rem;font-weight:900;border:1px solid var(--line)}.button.mint{background:var(--mint);color:var(--evergreen);border-color:var(--mint)}.hero{padding:75px 0}footer{padding:50px 0;color:var(--muted);font-size:.76rem}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+</style>

@@ -13,7 +13,9 @@ export function auditConsentPage(html, route) {
   if (!/<meta\s+name=["']referrer["']\s+content=["']no-referrer["']/iu.test(head)) {
     errors.push(`${route}: no-referrer policy is required`);
   }
-  const csp = head.match(/<meta\s+http-equiv=["']Content-Security-Policy["']\s+content=["']([^"']+)["']/iu)?.[1] ?? '';
+  // The double-quoted attribute contains single-quoted CSP source expressions.
+  const csp = head.match(/<meta\s+http-equiv=["']Content-Security-Policy["']\s+content="([^"]+)"/iu)?.[1] ??
+    head.match(/<meta\s+http-equiv=["']Content-Security-Policy["']\s+content='([^']+)'/iu)?.[1] ?? '';
   for (const directive of ["default-src 'none'", "connect-src 'none'", "script-src 'none'", "form-action 'none'"]) {
     if (!csp.includes(directive)) errors.push(`${route}: missing restrictive CSP directive ${directive}`);
   }

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { auditConsentPage } from './audit-consent-pages.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
@@ -42,3 +43,12 @@ for (const required of ['favicon.svg', 'robots.txt', 'sitemap-index.xml']) {
 }
 
 console.log('Verified built Astro marketing artifact.');
+
+// Validate every sensitive public route, not only the landing page.
+for (const route of ['join', 'poll']) {
+  const candidates = [path.join(dist, route, 'index.html'), path.join(dist, `${route}.html`)];
+  const candidate = candidates.find(existsSync);
+  assert.ok(candidate, `missing built route /${route}`);
+  const page = readFileSync(candidate, 'utf8');
+  assert.deepEqual(auditConsentPage(page, route), [], `public /${route} privacy or metadata regression`);
+}
